@@ -25,11 +25,11 @@ export default function DashboardHeader({ username }: DashboardHeaderProps) {
   }
 
   return (
-    <header className='sticky top-0 z-20 flex h-[72px] items-center justify-between bg-teal-800 px-4 text-white w-full md:px-6'>
+    <header className='w-[98%] mx-auto sticky top-0 z-20 flex h-[72px] items-center justify-between bg-teal-800 px-4 text-white rounded md:px-6 my-6'>
       <div className='flex items-center gap-4'>
         <SidebarTrigger className='text-white md:hidden' />
         <div>
-          <h1 className='text-xl font-medium'>Welcome, {username}</h1>
+          <h1 className='text-2xl font-medium'>Welcome, {username}</h1>
           <p className='text-sm opacity-80'>Have a nice day</p>
         </div>
       </div>

@@ -31,7 +31,8 @@ export function EarningsChart({ data }: EarningsChartProps) {
           {
             label: "Earnings",
             data: data.map((item) => item.amount),
-            backgroundColor: "#002B5B",
+            backgroundColor: "#20474E",
+            borderColor: "#20474E",
             borderRadius: 4,
           },
         ],
@@ -50,14 +51,14 @@ export function EarningsChart({ data }: EarningsChartProps) {
             ticks: {
               callback: (value) => `$${value}`,
               font: {
-                size: 10,
+                size: 12,
               },
             },
           },
           x: {
             ticks: {
               font: {
-                size: 10,
+                size: 13,
               },
             },
           },

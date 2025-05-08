@@ -26,16 +26,22 @@ export default function DashboardContent() {
   return (
     <main className='w-full p-4 md:p-6'>
       <section className='mb-8'>
-        <h2 className='mb-4 text-xl font-medium text-gray-800'>Overview</h2>
-        <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
-          <StatCard title='Total Earnings' value='$12300' />
-          <StatCard title='Total User' value='520' />
-          <StatCard title='Total Subscriptions' value='1430' />
+        <h2 className='mb-4 text-[32px] font-medium text-[#20474E]'>
+          Overview
+        </h2>
+        <div className='md:container mx-auto'>
+          <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
+            <StatCard title='Total Earnings' value='$12300' />
+            <StatCard title='Total User' value='520' />
+            <StatCard title='Total Subscriptions' value='1430' />
+          </div>
         </div>
       </section>
 
       <section>
-        <h2 className='mb-4 text-xl font-medium text-gray-800'>Transaction</h2>
+        {/* <h2 className='mb-4 text-[28px] font-medium text-[#20474E]'>
+          Transaction
+        </h2> */}
         <TransactionTable />
       </section>
     </main>
@@ -49,10 +55,10 @@ interface StatCardProps {
 
 function StatCard({ title, value }: StatCardProps) {
   return (
-    <Card className='overflow-hidden border border-gray-200'>
+    <Card className='overflow-hidden w-full md:max-w-[380px] h-[161px] flex items-center justify-center border border-gray-200'>
       <CardContent className='flex flex-col items-center justify-center p-6'>
-        <h3 className='mb-2 text-gray-500'>{title}</h3>
-        <p className='text-3xl font-semibold text-gray-800'>{value}</p>
+        <h3 className='mb-2 text-[#6E7A8A]'>{title}</h3>
+        <p className='text-[32px] font-semibold text-[#20474E]'>{value}</p>
       </CardContent>
     </Card>
   );
@@ -177,12 +183,12 @@ function TransactionTable() {
       <div className='overflow-hidden rounded-md border border-gray-200'>
         <div className='mb-8'>
           <div className='flex items-center justify-between mb-6'>
-            <h2 className='text-[29px] text-[#181414] font-medium'>Earnings</h2>
+            <h2 className='text-[28px] font-medium text-[#20474E]'>Earnings</h2>
             <Select defaultValue='2024'>
               <SelectTrigger className='w-[180px]'>
                 <SelectValue placeholder='Select Year' />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className='outline-none focus:outline-none'>
                 <SelectItem value='2024'>2024 May</SelectItem>
                 <SelectItem value='2023'>2023</SelectItem>
                 <SelectItem value='2022'>2022</SelectItem>
@@ -190,7 +196,7 @@ function TransactionTable() {
             </Select>
           </div>
 
-          <div className='h-[250px] w-full'>
+          <div className='h-[250px] w-full mb-16'>
             <EarningsChart
               data={[
                 { month: "Jan", amount: 3000 },
@@ -209,28 +215,10 @@ function TransactionTable() {
             />
           </div>
         </div>
-        {/* <div className='mb-8'>
-          <div className='flex items-center justify-between mb-6'>
-            <h2 className='text-[29px] text-[#181414] font-medium'>Earnings</h2>
-            <Select value={selectedYear} onValueChange={setSelectedYear}>
-              <SelectTrigger className='w-[180px]'>
-                <SelectValue placeholder='Select Year' />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value='2024'>2024</SelectItem>
-                <SelectItem value='2023'>2023</SelectItem>
-                <SelectItem value='2022'>2022</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
 
-          <div className='h-[250px] w-full'>
-            <EarningsChart data={chartData} />
-          </div>
-        </div> */}
         <div className='overflow-x-auto'>
           <Table>
-            <TableHeader className='bg-teal-800 text-white'>
+            <TableHeader className='bg-[#20474E] hover:!bg-[#20474E] text-white'>
               <TableRow>
                 <TableHead className='text-white'>#Tr.ID</TableHead>
                 <TableHead className='text-white'>User Name</TableHead>
@@ -243,20 +231,26 @@ function TransactionTable() {
             <TableBody>
               {currentTransactions.map((transaction) => (
                 <TableRow key={transaction.id}>
-                  <TableCell className='font-medium'>
+                  <TableCell className='font-medium text-lg text-[#20474E]'>
                     {transaction.id}
                   </TableCell>
-                  <TableCell>{transaction.name}</TableCell>
-                  <TableCell>{transaction.subscription}</TableCell>
-                  <TableCell>{transaction.date}</TableCell>
-                  <TableCell className='text-center'>
+                  <TableCell className='text-lg text-[#20474E]'>
+                    {transaction.name}
+                  </TableCell>
+                  <TableCell className='text-lg text-[#20474E]'>
+                    {transaction.subscription}
+                  </TableCell>
+                  <TableCell className='text-lg text-[#20474E]'>
+                    {transaction.date}
+                  </TableCell>
+                  <TableCell className='text-center text-lg text-[#20474E]'>
                     <Button
                       variant='ghost'
                       size='sm'
                       className='h-8 w-8 p-0'
                       onClick={() => openUserModal(transaction)}
                     >
-                      <Info className='h-4 w-4' />
+                      <Info className='h-6 w-6' />
                     </Button>
                   </TableCell>
                 </TableRow>
