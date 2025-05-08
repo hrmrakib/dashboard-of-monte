@@ -1,14 +1,29 @@
+"use client";
+
 import { Bell } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface DashboardHeaderProps {
   username: string;
 }
 
 export default function DashboardHeader({ username }: DashboardHeaderProps) {
+  const pathname = usePathname();
+
+  if (
+    pathname === "/signin" ||
+    pathname === "/create-account" ||
+    pathname === "/forget-password" ||
+    pathname === "/verify-password" ||
+    pathname === "/verify-otp"
+  ) {
+    return null;
+  }
+
   return (
     <header className='sticky top-0 z-20 flex h-[72px] items-center justify-between bg-teal-800 px-4 text-white w-full md:px-6'>
       <div className='flex items-center gap-4'>
@@ -27,7 +42,6 @@ export default function DashboardHeader({ username }: DashboardHeaderProps) {
 
         <div className='flex items-center gap-2'>
           <Link href='/setting/personal-information'>
-            
             <Avatar>
               <AvatarImage src='/user.jpg' alt={username} />
               <AvatarFallback>{username.charAt(0)}</AvatarFallback>

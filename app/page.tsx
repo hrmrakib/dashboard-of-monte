@@ -13,6 +13,14 @@ import {
 } from "@/components/ui/table";
 import { useState } from "react";
 import UserDetailsModal from "@/components/user-details-modal";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { EarningsChart } from "@/components/EarningChart";
 
 export default function DashboardContent() {
   return (
@@ -148,6 +156,10 @@ function TransactionTable() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentTransactions = transactions.slice(startIndex, endIndex);
+  const [selectedYear, setSelectedYear] = useState("2025");
+  const [chartData, setChartData] = useState<
+    { month: string; amount: number }[]
+  >([]);
 
   const openUserModal = (user: any) => {
     setSelectedUser(user);
@@ -163,6 +175,59 @@ function TransactionTable() {
   return (
     <>
       <div className='overflow-hidden rounded-md border border-gray-200'>
+        <div className='mb-8'>
+          <div className='flex items-center justify-between mb-6'>
+            <h2 className='text-[29px] text-[#181414] font-medium'>Earnings</h2>
+            <Select defaultValue='2024'>
+              <SelectTrigger className='w-[180px]'>
+                <SelectValue placeholder='Select Year' />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value='2024'>2024 May</SelectItem>
+                <SelectItem value='2023'>2023</SelectItem>
+                <SelectItem value='2022'>2022</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className='h-[250px] w-full'>
+            <EarningsChart
+              data={[
+                { month: "Jan", amount: 3000 },
+                { month: "Feb", amount: 2500 },
+                { month: "Mar", amount: 6000 },
+                { month: "Apr", amount: 7000 },
+                { month: "May", amount: 6000 },
+                { month: "Jun", amount: 6000 },
+                { month: "Jul", amount: 7000 },
+                { month: "Aug", amount: 4000 },
+                { month: "Sep", amount: 2000 },
+                { month: "Oct", amount: 7000 },
+                { month: "Nov", amount: 8000 },
+                { month: "Dec", amount: 7000 },
+              ]}
+            />
+          </div>
+        </div>
+        {/* <div className='mb-8'>
+          <div className='flex items-center justify-between mb-6'>
+            <h2 className='text-[29px] text-[#181414] font-medium'>Earnings</h2>
+            <Select value={selectedYear} onValueChange={setSelectedYear}>
+              <SelectTrigger className='w-[180px]'>
+                <SelectValue placeholder='Select Year' />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value='2024'>2024</SelectItem>
+                <SelectItem value='2023'>2023</SelectItem>
+                <SelectItem value='2022'>2022</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className='h-[250px] w-full'>
+            <EarningsChart data={chartData} />
+          </div>
+        </div> */}
         <div className='overflow-x-auto'>
           <Table>
             <TableHeader className='bg-teal-800 text-white'>
@@ -174,6 +239,7 @@ function TransactionTable() {
                 <TableHead className='text-center text-white'>Action</TableHead>
               </TableRow>
             </TableHeader>
+
             <TableBody>
               {currentTransactions.map((transaction) => (
                 <TableRow key={transaction.id}>

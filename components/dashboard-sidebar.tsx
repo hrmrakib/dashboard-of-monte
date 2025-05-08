@@ -26,6 +26,16 @@ import Image from "next/image";
 export default function DashboardSidebar() {
   const pathname = usePathname();
 
+  if (
+    pathname === "/signin" ||
+    pathname === "/create-account" ||
+    pathname === "/forget-password" ||
+    pathname === "/verify-password" ||
+    pathname === "/verify-otp"
+  ) {
+    return null;
+  }
+
   return (
     <Sidebar className='border-r border-gray-200 fixed left-0 h-full z-30'>
       <SidebarContent>
@@ -78,7 +88,7 @@ export default function DashboardSidebar() {
 
       <SidebarFooter className='p-6'>
         <Link
-          href='/logout'
+          href='/sign-out'
           className='flex w-full items-center gap-3 bg-[#F99F04] px-4 py-3 text-white hover:bg-[#f99f04d2]'
         >
           <svg
@@ -91,9 +101,9 @@ export default function DashboardSidebar() {
             <path
               d='M17.5 16L21.5 12M21.5 12L17.5 8M21.5 12L7.5 12M13.5 16V17C13.5 18.6569 12.1569 20 10.5 20H6.5C4.84315 20 3.5 18.6569 3.5 17V7C3.5 5.34315 4.84315 4 6.5 4H10.5C12.1569 4 13.5 5.34315 13.5 7V8'
               stroke='#FAFAFA'
-              stroke-width='1.5'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
             />
           </svg>
 
@@ -201,9 +211,9 @@ function NavItem({ href, icon: Icon, label, active }: NavItemProps) {
 //             <path
 //               d='M17.5 16L21.5 12M21.5 12L17.5 8M21.5 12L7.5 12M13.5 16V17C13.5 18.6569 12.1569 20 10.5 20H6.5C4.84315 20 3.5 18.6569 3.5 17V7C3.5 5.34315 4.84315 4 6.5 4H10.5C12.1569 4 13.5 5.34315 13.5 7V8'
 //               stroke='#FAFAFA'
-//               stroke-width='1.5'
-//               stroke-linecap='round'
-//               stroke-linejoin='round'
+//               strokeWidth='1.5'
+//               strokeLinecap='round'
+//               strokeLinejoin='round'
 //             />
 //           </svg>
 
