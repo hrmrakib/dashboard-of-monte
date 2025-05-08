@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { useState } from "react";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import DashboardHeader from "@/components/dashboard-header";
+import DashboardSidebar from "@/components/dashboard-sidebar";
+
 export const metadata: Metadata = {
-  title: "App",
+  title: "DesignDoc We Simplify",
   description: "Created with",
   generator: "dev",
 };
+const username = "Arjun";
 
 export default function RootLayout({
   children,
@@ -14,7 +20,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <SidebarProvider>
+          <div className='flex min-h-screen bg-gray-50 w-full'>
+            <DashboardSidebar />
+            <div className='flex-1 w-full'>
+              <DashboardHeader username={username} />
+              {children}
+              {/* <DashboardContent /> */}
+            </div>
+          </div>
+        </SidebarProvider>
+      </body>
     </html>
   );
 }

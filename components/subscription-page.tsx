@@ -14,7 +14,7 @@ export default function SubscriptionPage() {
       <div className="flex min-h-screen bg-gray-50 w-full">
         <DashboardSidebar />
         <div className="flex-1 w-full">
-          <DashboardHeader username="Arjun" />
+          {/* <DashboardHeader username="Arjun" /> */}
           <main className="w-full p-4 md:p-6">
             <div className="mb-6 flex items-center justify-between">
               <h1 className="text-2xl font-semibold text-gray-800">Subscription Plans</h1>
