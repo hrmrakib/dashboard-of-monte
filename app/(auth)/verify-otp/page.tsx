@@ -134,10 +134,10 @@ export default function VerifyOTP() {
 
           <div className='w-1/2'>
             <div className='text-center space-y-2'>
-              <h1 className='text-[32px] font-semibold text-[#20474E]'>
+              <h1 className='text-[32px] font-semibold text-primary'>
                 Verify with OTP
               </h1>
-              <p className='text-lg text-[#20474E]'>
+              <p className='text-lg text-primary'>
                 To ensure your security. please enter the One-Time password
                 (OTP) sent to your registered mobile/email below.
               </p>
@@ -165,7 +165,7 @@ export default function VerifyOTP() {
               </div>
 
               <div className='flex justify-center'>
-                <p className='text-lg text-[#20474E]'>
+                <p className='text-lg text-primary'>
                   Didn&apos;t receive the OTP?{" "}
                   <button
                     type='button'
@@ -189,7 +189,7 @@ export default function VerifyOTP() {
               <div className='text-center'>
                 <Link
                   href='/signin'
-                  className='text-[#20474E] hover:text-[#20474E] text-sm font-medium'
+                  className='text-primary hover:text-primary text-sm font-medium'
                 >
                   Back to Sign In
                 </Link>

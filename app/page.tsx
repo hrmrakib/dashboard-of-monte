@@ -26,9 +26,7 @@ export default function DashboardContent() {
   return (
     <main className='w-full p-4 md:p-6'>
       <section className='mb-8'>
-        <h2 className='mb-4 text-[32px] font-medium text-[#20474E]'> 
-          Overview
-        </h2>
+        <h2 className='mb-4 text-[32px] font-medium text-primary'>Overview</h2>
         <div className='md:container mx-auto'>
           <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
             <StatCard title='Total Earnings' value='$12300' />
@@ -39,7 +37,7 @@ export default function DashboardContent() {
       </section>
 
       <section>
-        {/* <h2 className='mb-4 text-[28px] font-medium text-[#20474E]'>
+        {/* <h2 className='mb-4 text-[28px] font-medium text-primary'>
           Transaction
         </h2> */}
         <TransactionTable />
@@ -58,7 +56,7 @@ function StatCard({ title, value }: StatCardProps) {
     <Card className='overflow-hidden w-full md:max-w-[380px] h-[161px] flex items-center justify-center border border-gray-200'>
       <CardContent className='flex flex-col items-center justify-center p-6'>
         <h3 className='mb-2 text-[#6E7A8A]'>{title}</h3>
-        <p className='text-[32px] font-semibold text-[#20474E]'>{value}</p>
+        <p className='text-[32px] font-semibold text-primary'>{value}</p>
       </CardContent>
     </Card>
   );
@@ -183,7 +181,7 @@ function TransactionTable() {
       <div className='overflow-hidden rounded-md border border-gray-200'>
         <div className='mb-8'>
           <div className='flex items-center justify-between mb-6'>
-            <h2 className='text-[28px] font-medium text-[#20474E]'>Earnings</h2>
+            <h2 className='text-[28px] font-medium text-primary'>Earnings</h2>
             <Select defaultValue='2024'>
               <SelectTrigger className='w-[180px]'>
                 <SelectValue placeholder='Select Year' />
@@ -231,19 +229,19 @@ function TransactionTable() {
             <TableBody>
               {currentTransactions.map((transaction) => (
                 <TableRow key={transaction.id}>
-                  <TableCell className='font-medium text-lg text-[#20474E]'>
+                  <TableCell className='font-medium text-lg text-primary'>
                     {transaction.id}
                   </TableCell>
-                  <TableCell className='text-lg text-[#20474E]'>
+                  <TableCell className='text-lg text-primary'>
                     {transaction.name}
                   </TableCell>
-                  <TableCell className='text-lg text-[#20474E]'>
+                  <TableCell className='text-lg text-primary'>
                     {transaction.subscription}
                   </TableCell>
-                  <TableCell className='text-lg text-[#20474E]'>
+                  <TableCell className='text-lg text-primary'>
                     {transaction.date}
                   </TableCell>
-                  <TableCell className='text-center text-lg text-[#20474E]'>
+                  <TableCell className='text-center text-lg text-primary'>
                     <Button
                       variant='ghost'
                       size='sm'

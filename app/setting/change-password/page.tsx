@@ -72,7 +72,7 @@ export default function ChangePasswordPage() {
             <div className='mb-6'>
               <Link
                 href='/setting'
-                className='inline-flex items-center text-teal-800 hover:text-teal-700'
+                className='inline-flex items-center text-primary hover:text-teal-700'
               >
                 <ArrowLeft className='mr-2 h-4 w-4' />
                 <span className='text-xl font-semibold'>Change Password</span>

@@ -123,10 +123,10 @@ export default function SignUpPage() {
         {/* Form Section */}
         <div className='w-full md:w-1/2 max-w-md'>
           <div className='text-center mb-6'>
-            <h1 className='text-[32px] font-bold text-[#20474E] mb-2'>
+            <h1 className='text-[32px] font-bold text-primary mb-2'>
               Create an Account
             </h1>
-            <p className='text-[#20474E] text-lg'>
+            <p className='text-primary text-lg'>
               Sign up Now and unlock exclusive access!
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function SignUpPage() {
               <div>
                 <label
                   htmlFor='name'
-                  className='block text-[#20474E] text-lg font-medium mb-1'
+                  className='block text-primary text-lg font-medium mb-1'
                 >
                   Name
                 </label>
@@ -154,7 +154,7 @@ export default function SignUpPage() {
                   onChange={handleChange}
                   className={`w-full p-3 border ${
                     errors.name ? "border-red-500" : "border-slate-300"
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-[#20474E]`}
+                  } rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-primary`}
                 />
                 {errors.name && (
                   <p className='text-red-500 text-sm mt-1'>{errors.name}</p>
@@ -164,7 +164,7 @@ export default function SignUpPage() {
               <div>
                 <label
                   htmlFor='email'
-                  className='block text-[#20474E] text-lg font-medium mb-1'
+                  className='block text-primary text-lg font-medium mb-1'
                 >
                   Email
                 </label>
@@ -177,7 +177,7 @@ export default function SignUpPage() {
                   onChange={handleChange}
                   className={`w-full p-3 border ${
                     errors.email ? "border-red-500" : "border-slate-300"
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-[#20474E]`}
+                  } rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-primary`}
                 />
                 {errors.email && (
                   <p className='text-red-500 text-sm mt-1'>{errors.email}</p>
@@ -187,7 +187,7 @@ export default function SignUpPage() {
               <div>
                 <label
                   htmlFor='password'
-                  className='block text-[#20474E] text-lg font-medium mb-1'
+                  className='block text-primary text-lg font-medium mb-1'
                 >
                   Password
                 </label>
@@ -201,7 +201,7 @@ export default function SignUpPage() {
                     onChange={handleChange}
                     className={`w-full p-3 border ${
                       errors.password ? "border-red-500" : "border-slate-300"
-                    } rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-[#20474E]`}
+                    } rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-primary`}
                   />
                   <button
                     type='button'
@@ -224,12 +224,12 @@ export default function SignUpPage() {
                     name='agreeToTerms'
                     checked={formData.agreeToTerms}
                     onChange={handleChange}
-                    className='w-4 h-4 text-teal-600 border-slate-300 rounded focus:ring-teal-500 placeholder:text-[#20474E]'
+                    className='w-4 h-4 text-teal-600 border-slate-300 rounded focus:ring-teal-500 placeholder:text-primary'
                   />
                 </div>
                 <label
                   htmlFor='agreeToTerms'
-                  className='ml-2 text-lg text-[#20474E]'
+                  className='ml-2 text-lg text-primary'
                 >
                   I agree to the{" "}
                   <Link href='/terms' className='text-teal-600 hover:underline'>
@@ -272,7 +272,7 @@ export default function SignUpPage() {
               <button
                 type='button'
                 onClick={() => handleSocialLogin("Google")}
-                className='w-full flex items-center justify-center gap-2 border border-slate-300 text-lg text-[#20474E] font-medium py-3 px-4 rounded-md hover:bg-slate-50 transition duration-200 ease-in-out mb-3'
+                className='w-full flex items-center justify-center gap-2 border border-slate-300 text-lg text-primary font-medium py-3 px-4 rounded-md hover:bg-slate-50 transition duration-200 ease-in-out mb-3'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -303,7 +303,7 @@ export default function SignUpPage() {
               <button
                 type='button'
                 onClick={() => handleSocialLogin("Facebook")}
-                className='w-full flex items-center justify-center gap-2 border border-slate-300 text-lg text-[#20474E] font-medium py-3 px-4 rounded-md hover:bg-slate-50 transition duration-200 ease-in-out'
+                className='w-full flex items-center justify-center gap-2 border border-slate-300 text-lg text-primary font-medium py-3 px-4 rounded-md hover:bg-slate-50 transition duration-200 ease-in-out'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -322,11 +322,11 @@ export default function SignUpPage() {
           )}
 
           <div className='text-center mt-6'>
-            <p className='text-[#20474E] text-lg'>
+            <p className='text-primary text-lg'>
               I have an account?{" "}
               <Link
                 href='/signin'
-                className='text-[#20474E] text-lg font-medium hover:underline'
+                className='text-primary text-lg font-medium hover:underline'
               >
                 Sign In Now
               </Link>

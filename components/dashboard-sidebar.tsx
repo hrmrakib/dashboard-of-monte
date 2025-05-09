@@ -137,7 +137,7 @@ function NavItem({ href, icon: Icon, label, active }: NavItemProps) {
         >
           <Icon size={18} />
           <span
-            className={`text-lg text-[#20474E] ${active ? "text-white" : ""}`}
+            className={`text-lg text-primary ${active ? "text-white" : ""}`}
           >
             {label}
           </span>

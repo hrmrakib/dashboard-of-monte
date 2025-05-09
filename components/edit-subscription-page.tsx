@@ -1,45 +1,49 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Link from "next/link"
-import { ArrowLeft, Plus, Circle } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { SidebarProvider } from "@/components/ui/sidebar"
-import DashboardSidebar from "@/components/dashboard-sidebar"
-import DashboardHeader from "@/components/dashboard-header"
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowLeft, Plus, Circle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import DashboardSidebar from "@/components/dashboard-sidebar";
+import DashboardHeader from "@/components/dashboard-header";
 
 interface EditSubscriptionPageProps {
-  id: string
+  id: string;
 }
 
-export default function EditSubscriptionPage({ id }: EditSubscriptionPageProps) {
-  const [packageName, setPackageName] = useState("Basic")
-  const [packageAmount, setPackageAmount] = useState("$4.99")
-  const [packageExpiration, setPackageExpiration] = useState("1 month")
+export default function EditSubscriptionPage({
+  id,
+}: EditSubscriptionPageProps) {
+  const [packageName, setPackageName] = useState("Basic");
+  const [packageAmount, setPackageAmount] = useState("$4.99");
+  const [packageExpiration, setPackageExpiration] = useState("1 month");
 
-  const [features, setFeatures] = useState([{ name: "View Members Directory", value: "View Members Directory" }])
+  const [features, setFeatures] = useState([
+    { name: "View Members Directory", value: "View Members Directory" },
+  ]);
 
   const addFeatureField = () => {
-    setFeatures([...features, { name: "", value: "" }])
-  }
+    setFeatures([...features, { name: "", value: "" }]);
+  };
 
   const removeFeatureField = (index: number) => {
-    const updatedFeatures = [...features]
-    updatedFeatures.splice(index, 1)
-    setFeatures(updatedFeatures)
-  }
+    const updatedFeatures = [...features];
+    updatedFeatures.splice(index, 1);
+    setFeatures(updatedFeatures);
+  };
 
   const updateFeatureValue = (index: number, value: string) => {
-    const updatedFeatures = [...features]
-    updatedFeatures[index].value = value
-    setFeatures(updatedFeatures)
-  }
+    const updatedFeatures = [...features];
+    updatedFeatures[index].value = value;
+    setFeatures(updatedFeatures);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
     console.log({
       id,
@@ -47,86 +51,109 @@ export default function EditSubscriptionPage({ id }: EditSubscriptionPageProps) 
       packageAmount,
       packageExpiration,
       features,
-    })
-  }
+    });
+  };
 
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen bg-gray-50">
+      <div className='flex min-h-screen bg-gray-50'>
         <DashboardSidebar />
-        <div className="flex-1 w-full">
-          <DashboardHeader username="Arjun" />
-          <main className="w-full p-4 md:p-6">
-            <div className="max-w-3xl mx-auto">
-              <div className="mb-6">
-                <Link href="/subscription" className="inline-flex items-center text-teal-800 hover:text-teal-700">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  <span className="text-xl font-semibold">Edit Subscription</span>
+        <div className='flex-1 w-full'>
+          <DashboardHeader username='Arjun' />
+          <main className='w-full p-4 md:p-6'>
+            <div className='max-w-3xl mx-auto'>
+              <div className='mb-6'>
+                <Link
+                  href='/subscription'
+                  className='inline-flex items-center text-primary hover:text-teal-700'
+                >
+                  <ArrowLeft className='mr-2 h-4 w-4' />
+                  <span className='text-xl font-semibold'>
+                    Edit Subscription
+                  </span>
                 </Link>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label htmlFor="package-name" className="block text-sm font-medium text-gray-700">
+              <form onSubmit={handleSubmit} className='space-y-6'>
+                <div className='space-y-2'>
+                  <label
+                    htmlFor='package-name'
+                    className='block text-sm font-medium text-gray-700'
+                  >
                     Package Name
                   </label>
                   <Input
-                    id="package-name"
+                    id='package-name'
                     value={packageName}
                     onChange={(e) => setPackageName(e.target.value)}
-                    className="w-full"
+                    className='w-full'
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="package-amount" className="block text-sm font-medium text-gray-700">
+                <div className='space-y-2'>
+                  <label
+                    htmlFor='package-amount'
+                    className='block text-sm font-medium text-gray-700'
+                  >
                     Package Amount
                   </label>
                   <Input
-                    id="package-amount"
+                    id='package-amount'
                     value={packageAmount}
                     onChange={(e) => setPackageAmount(e.target.value)}
-                    className="w-full"
+                    className='w-full'
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="package-expiration" className="block text-sm font-medium text-gray-700">
+                <div className='space-y-2'>
+                  <label
+                    htmlFor='package-expiration'
+                    className='block text-sm font-medium text-gray-700'
+                  >
                     Package Expiration
                   </label>
                   <Input
-                    id="package-expiration"
+                    id='package-expiration'
                     value={packageExpiration}
                     onChange={(e) => setPackageExpiration(e.target.value)}
-                    className="w-full"
+                    className='w-full'
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <label className="block text-sm font-medium text-gray-700">Package Features</label>
-                  <div className="space-y-3">
+                <div className='space-y-2'>
+                  <label className='block text-sm font-medium text-gray-700'>
+                    Package Features
+                  </label>
+                  <div className='space-y-3'>
                     {features.map((feature, index) => (
-                      <div key={index} className="flex items-center justify-between border border-gray-200 rounded-md">
+                      <div
+                        key={index}
+                        className='flex items-center justify-between border border-gray-200 rounded-md'
+                      >
                         <Input
                           value={feature.value}
-                          onChange={(e) => updateFeatureValue(index, e.target.value)}
-                          className="border-0 focus-visible:ring-0 focus-visible:ring-offset-0"
-                          placeholder="Enter feature"
+                          onChange={(e) =>
+                            updateFeatureValue(index, e.target.value)
+                          }
+                          className='border-0 focus-visible:ring-0 focus-visible:ring-offset-0'
+                          placeholder='Enter feature'
                         />
                         <button
-                          type="button"
+                          type='button'
                           onClick={() =>
-                            index === features.length - 1 ? addFeatureField() : removeFeatureField(index)
+                            index === features.length - 1
+                              ? addFeatureField()
+                              : removeFeatureField(index)
                           }
-                          className="flex-shrink-0 p-3 focus:outline-none"
+                          className='flex-shrink-0 p-3 focus:outline-none'
                         >
                           {index === features.length - 1 ? (
-                            <div className="text-green-600">
-                              <Plus className="h-5 w-5 rounded-full border-2 border-current" />
+                            <div className='text-green-600'>
+                              <Plus className='h-5 w-5 rounded-full border-2 border-current' />
                             </div>
                           ) : (
-                            <div className="text-amber-400">
-                              <Circle className="h-5 w-5 fill-current" />
+                            <div className='text-amber-400'>
+                              <Circle className='h-5 w-5 fill-current' />
                             </div>
                           )}
                         </button>
@@ -135,7 +162,10 @@ export default function EditSubscriptionPage({ id }: EditSubscriptionPageProps) 
                   </div>
                 </div>
 
-                <Button type="submit" className="w-full bg-teal-800 hover:bg-teal-700 text-white py-2 rounded-md">
+                <Button
+                  type='submit'
+                  className='w-full bg-teal-800 hover:bg-teal-700 text-white py-2 rounded-md'
+                >
                   Update
                 </Button>
               </form>
@@ -144,5 +174,5 @@ export default function EditSubscriptionPage({ id }: EditSubscriptionPageProps) 
         </div>
       </div>
     </SidebarProvider>
-  )
+  );
 }

@@ -91,10 +91,10 @@ export default function CreatePasswordPage() {
         {/* Form Section */}
         <div className='w-full md:w-1/2 max-w-md'>
           <div className='text-center mb-6'>
-            <h1 className='text-[32px] font-bold text-[#20474E] mb-2'>
+            <h1 className='text-[32px] font-bold text-primary mb-2'>
               Create Password
             </h1>
-            <p className='text-[#20474E] text-lg'>
+            <p className='text-primary text-lg'>
               Create your new password for your account
             </p>
           </div>
@@ -103,7 +103,7 @@ export default function CreatePasswordPage() {
             <div>
               <label
                 htmlFor='newPassword'
-                className='block text-[#20474E] text-lg font-medium mb-1'
+                className='block text-primary text-lg font-medium mb-1'
               >
                 New Password
               </label>
@@ -128,7 +128,7 @@ export default function CreatePasswordPage() {
             <div>
               <label
                 htmlFor='confirmPassword'
-                className='block text-[#20474E] text-lg font-medium mb-1'
+                className='block text-primary text-lg font-medium mb-1'
               >
                 Confirm Password
               </label>

@@ -92,10 +92,10 @@ export default function SignInPage() {
         {/* Form Section */}
         <div className='w-full md:w-1/2 max-w-md'>
           <div className='text-center mb-6'>
-            <h1 className='text-[32px] font-bold text-[#20474E] mb-2'>
+            <h1 className='text-[32px] font-bold text-primary mb-2'>
               Forget Your Password
             </h1>
-            <p className='text-[#20474E] text-lg'>
+            <p className='text-primary text-lg'>
               Welcome back! Select method to log in
             </p>
           </div>
@@ -109,7 +109,7 @@ export default function SignInPage() {
               <div>
                 <label
                   htmlFor='name'
-                  className='block text-[#20474E] text-lg font-medium mb-1'
+                  className='block text-primary text-lg font-medium mb-1'
                 >
                   Email
                 </label>
@@ -120,7 +120,7 @@ export default function SignInPage() {
                   placeholder='Enter your email'
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full p-3 border placeholder:text-[#20474E] ${
+                  className={`w-full p-3 border placeholder:text-primary ${
                     errors.name ? "border-red-500" : "border-slate-300"
                   } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                 />
@@ -145,7 +145,7 @@ export default function SignInPage() {
 
           <div className='text-center mt-6'>
             <p className='text-slate-600'>
-              Back to { "  "}
+              Back to {"  "}
               <Link
                 href='/signin'
                 className='text-blue-600 font-medium hover:underline'

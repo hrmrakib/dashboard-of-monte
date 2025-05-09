@@ -9,8 +9,8 @@ import { Eye, EyeOff } from "lucide-react";
 
 export default function SignInPage() {
   const [formData, setFormData] = useState({
-    name: "", 
-    password: "", 
+    name: "",
+    password: "",
     remember: false,
   });
   const [showPassword, setShowPassword] = useState(false);
@@ -32,7 +32,6 @@ export default function SignInPage() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -99,10 +98,10 @@ export default function SignInPage() {
         {/* Form Section */}
         <div className='w-full md:w-1/2 max-w-md'>
           <div className='text-center mb-6'>
-            <h1 className='text-[32px] font-bold text-[#20474E] mb-2'>
+            <h1 className='text-[32px] font-bold text-primary mb-2'>
               Sign In Now
             </h1>
-            <p className='text-[#20474E] text-lg'>
+            <p className='text-primary text-lg'>
               Welcome back! Select method log in
             </p>
           </div>
@@ -116,7 +115,7 @@ export default function SignInPage() {
               <div>
                 <label
                   htmlFor='name'
-                  className='block text-[#20474E] text-lg font-medium mb-1'
+                  className='block text-primary text-lg font-medium mb-1'
                 >
                   Name
                 </label>
@@ -127,7 +126,7 @@ export default function SignInPage() {
                   placeholder='Full name...'
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full p-3 border placeholder:text-[#20474E] ${
+                  className={`w-full p-3 border placeholder:text-primary ${
                     errors.name ? "border-red-500" : "border-slate-300"
                   } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                 />
@@ -139,7 +138,7 @@ export default function SignInPage() {
               <div>
                 <label
                   htmlFor='password'
-                  className='block text-[#20474E] text-lg font-medium mb-1'
+                  className='block text-primary text-lg font-medium mb-1'
                 >
                   Password
                 </label>
@@ -151,7 +150,7 @@ export default function SignInPage() {
                     placeholder='Enter your password...'
                     value={formData.password}
                     onChange={handleChange}
-                    className={`w-full p-3 border placeholder:text-[#20474E] ${
+                    className={`w-full p-3 border placeholder:text-primary ${
                       errors.password ? "border-red-500" : "border-slate-300"
                     } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                   />
@@ -180,7 +179,7 @@ export default function SignInPage() {
                   />
                   <label
                     htmlFor='remember'
-                    className='ml-2 text-lg text-[#20474E]'
+                    className='ml-2 text-lg text-primary'
                   >
                     Remember
                   </label>
@@ -208,11 +207,11 @@ export default function SignInPage() {
           )}
 
           <div className='text-center mt-6'>
-            <p className='text-[#20474E] text-lg'>
+            <p className='text-primary text-lg'>
               Don&apos;t have an account?{" "}
               <Link
                 href='/create-account'
-                className='text-[#20474E] text-lg font-medium hover:underline'
+                className='text-primary text-lg font-medium hover:underline'
               >
                 Sign Up Now
               </Link>

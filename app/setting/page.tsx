@@ -27,9 +27,9 @@ export default function SettingsPage() {
                 <Link
                   key={index}
                   href={link.href}
-                  className='flex items-center justify-between p-4 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors'
+                  className='flex items-center justify-between p-4 border border-[#20474E] rounded-md hover:bg-gray-50 transition-colors'
                 >
-                  <span className='text-gray-800'>{link.title}</span>
+                  <span className='text-primary text-lg'>{link.title}</span>
                   <ChevronRight className='h-5 w-5 text-gray-400' />
                 </Link>
               ))}

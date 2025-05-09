@@ -80,10 +80,10 @@ function SubscriptionCard({
   return (
     <Card className='max-w-[450px] overflow-hidden flex flex-col border border-gray-200'>
       <CardHeader className='bg-gray-50 pb-4 pt-6 text-center'>
-        <CardTitle className='text-[32px] text-[#20474E]'>{title}</CardTitle>
+        <CardTitle className='text-[32px] text-primary'>{title}</CardTitle>
         <div className='mt-2'>
-          <span className='text-2xl font-medium text-[#20474E]'>{price}</span>
-          <span className='text-sm text-[#20474E]'>/{period}</span>
+          <span className='text-2xl font-medium text-primary'>{price}</span>
+          <span className='text-sm text-primary'>/{period}</span>
         </div>
       </CardHeader>
       <CardContent className='p-6 flex-1'>
@@ -104,7 +104,7 @@ function SubscriptionCard({
                   <polyline points='20 6 9 17 4 12' />
                 </svg>
               </div>
-              <span className='text-lg text-[#20474E]'>{feature}</span>
+              <span className='text-lg text-primary'>{feature}</span>
             </li>
           ))}
         </ul>
