@@ -9,7 +9,7 @@ import { Eye, EyeOff } from "lucide-react";
 
 export default function SignInPage() {
   const [formData, setFormData] = useState({
-    name: "",
+    name: "", 
     password: "", 
     remember: false,
   });
@@ -32,6 +32,7 @@ export default function SignInPage() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -185,7 +186,7 @@ export default function SignInPage() {
                   </label>
                 </div>
                 <Link
-                  href='/forgot-password'
+                  href='/forget-password'
                   className='text-lg font-medium text-[#F99F04] hover:underline'
                 >
                   Forget Password?

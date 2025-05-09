@@ -31,7 +31,8 @@ export default function DashboardSidebar() {
     pathname === "/create-account" ||
     pathname === "/forget-password" ||
     pathname === "/verify-password" ||
-    pathname === "/verify-otp"
+    pathname === "/verify-otp" ||
+    pathname === "/reset-password"
   ) {
     return null;
   }
@@ -135,7 +136,11 @@ function NavItem({ href, icon: Icon, label, active }: NavItemProps) {
           )}
         >
           <Icon size={18} />
-          <span className={`text-lg text-[#20474E] ${active ? "text-white" : ""}`}>{label}</span>
+          <span
+            className={`text-lg text-[#20474E] ${active ? "text-white" : ""}`}
+          >
+            {label}
+          </span>
         </Link>
       </SidebarMenuButton>
     </SidebarMenuItem>

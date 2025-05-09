@@ -83,7 +83,7 @@ export default function ForgetPassword() {
               src='/logo.svg'
               alt='DesignDoc Logo'
               width={300}
-              height={150}
+              height={150} 
               className='mb-2'
             />
           </Link>

@@ -19,11 +19,11 @@ export default function DashboardHeader({ username }: DashboardHeaderProps) {
     pathname === "/create-account" ||
     pathname === "/forget-password" ||
     pathname === "/verify-password" ||
-    pathname === "/verify-otp"
+    pathname === "/verify-otp" ||
+    pathname === "/reset-password"
   ) {
     return null;
   }
-
   return (
     <header className='w-[98%] mx-auto sticky top-0 z-20 flex h-[72px] items-center justify-between bg-teal-800 px-4 text-white rounded md:px-6 my-6'>
       <div className='flex items-center gap-4'>

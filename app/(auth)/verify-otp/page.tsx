@@ -119,8 +119,8 @@ export default function VerifyOTP() {
   }, [countdown, resendDisabled]);
 
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center p-4 md:p-8'>
-      <div className='container mx-auto space-y-8'>
+    <div className='w-full flex min-h-screen flex-col items-center justify-center p-4 md:p-8'>
+      <div className='container mx-auto space-y-8 flex flex-col md:flex-row items-center'>
         <div className='flex flex-col md:flex-row items-center'>
           <Link href='/' className='mb-6 w-1/2'>
             <Image
@@ -134,11 +134,11 @@ export default function VerifyOTP() {
 
           <div className='w-1/2'>
             <div className='text-center space-y-2'>
-              <h1 className='text-2xl font-semibold text-gray-800'>
+              <h1 className='text-[32px] font-semibold text-[#20474E]'>
                 Verify with OTP
               </h1>
-              <p className='text-sm text-gray-600'>
-                To ensure your security, please enter the One-Time password
+              <p className='text-lg text-[#20474E]'>
+                To ensure your security. please enter the One-Time password
                 (OTP) sent to your registered mobile/email below.
               </p>
             </div>
@@ -147,7 +147,9 @@ export default function VerifyOTP() {
                 {otp.map((digit, index) => (
                   <Input
                     key={index}
-                    ref={(el) => (inputRefs.current[index] = el)}
+                    ref={(el) => {
+                      inputRefs.current[index] = el;
+                    }}
                     type='text'
                     inputMode='numeric'
                     pattern='[0-9]*'
@@ -163,31 +165,31 @@ export default function VerifyOTP() {
               </div>
 
               <div className='flex justify-center'>
-                <p className='text-sm'>
+                <p className='text-lg text-[#20474E]'>
                   Didn&apos;t receive the OTP?{" "}
                   <button
                     type='button'
                     onClick={handleResend}
                     disabled={resendDisabled}
-                    className='text-orange-500 hover:text-orange-600 font-medium disabled:text-gray-400 disabled:cursor-not-allowed'
+                    className='text-[#F99F04] hover:text-[#ffaf25] font-medium disabled:text-gray-400 disabled:cursor-not-allowed'
                   >
                     {resendDisabled ? `Resend (${countdown}s)` : "Resend"}
                   </button>
                 </p>
               </div>
 
-              <Button
+              <button
                 type='submit'
-                className='w-full bg-[#F99F04] hover:bg-[#F99F04] text-white py-2 rounded-md transition-colors'
+                className='w-full !bg-[#F99F04] hover:bg-[#F99F04] text-[#FFFDF7] py-2 rounded-md transition-colors'
                 disabled={isSubmitting || otp.some((digit) => !digit)}
               >
                 {isSubmitting ? "Verifying..." : "Submit"}
-              </Button>
+              </button>
 
               <div className='text-center'>
                 <Link
                   href='/signin'
-                  className='text-gray-600 hover:text-gray-800 text-sm font-medium'
+                  className='text-[#20474E] hover:text-[#20474E] text-sm font-medium'
                 >
                   Back to Sign In
                 </Link>

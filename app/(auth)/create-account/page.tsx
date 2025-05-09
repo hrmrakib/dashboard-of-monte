@@ -272,7 +272,7 @@ export default function SignUpPage() {
               <button
                 type='button'
                 onClick={() => handleSocialLogin("Google")}
-                className='w-full flex items-center justify-center gap-2 border border-slate-300 text-slate-700 font-medium py-3 px-4 rounded-md hover:bg-slate-50 transition duration-200 ease-in-out mb-3'
+                className='w-full flex items-center justify-center gap-2 border border-slate-300 text-lg text-[#20474E] font-medium py-3 px-4 rounded-md hover:bg-slate-50 transition duration-200 ease-in-out mb-3'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -303,7 +303,7 @@ export default function SignUpPage() {
               <button
                 type='button'
                 onClick={() => handleSocialLogin("Facebook")}
-                className='w-full flex items-center justify-center gap-2 border border-slate-300 text-slate-700 font-medium py-3 px-4 rounded-md hover:bg-slate-50 transition duration-200 ease-in-out'
+                className='w-full flex items-center justify-center gap-2 border border-slate-300 text-lg text-[#20474E] font-medium py-3 px-4 rounded-md hover:bg-slate-50 transition duration-200 ease-in-out'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'

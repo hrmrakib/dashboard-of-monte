@@ -26,7 +26,7 @@ export default function DashboardContent() {
   return (
     <main className='w-full p-4 md:p-6'>
       <section className='mb-8'>
-        <h2 className='mb-4 text-[32px] font-medium text-[#20474E]'>
+        <h2 className='mb-4 text-[32px] font-medium text-[#20474E]'> 
           Overview
         </h2>
         <div className='md:container mx-auto'>
