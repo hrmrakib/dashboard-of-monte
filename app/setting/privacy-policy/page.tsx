@@ -9,13 +9,19 @@ export default function PrivacyPolicyPage() {
       <div className='flex-1 w-full'>
         <main className='w-full p-4 md:p-6'>
           <div className='max-w-3xl mx-auto'>
-            <div className='mb-6'>
+            <div className='mb-6 flex items-center justify-between'>
               <Link
                 href='/setting'
                 className='inline-flex items-center text-primary hover:text-teal-700'
               >
                 <ArrowLeft className='mr-2 h-4 w-4' />
                 <span className='text-xl font-semibold'>Privacy Policy</span>
+              </Link>
+              <Link
+                href='/setting/privacy-policy/edit'
+                className='inline-flex items-center text-primary hover:text-teal-700 border border-[#20474E] rounded-md px-4 py-2'
+              >
+                <span className='text-xl font-semibold'>Edit</span>
               </Link>
             </div>
 

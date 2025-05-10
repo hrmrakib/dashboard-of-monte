@@ -74,21 +74,28 @@ export default function ChangePasswordPage() {
                 href='/setting'
                 className='inline-flex items-center text-primary hover:text-teal-700'
               >
-                <ArrowLeft className='mr-2 h-4 w-4' />
-                <span className='text-xl font-semibold'>Change Password</span>
+                <ArrowLeft className='mr-2 h-6 w-6' />
+                <span className='text-2xl text-[#20474E] font-semibold'>
+                  Change Password
+                </span>
               </Link>
             </div>
 
             <form onSubmit={handleSubmit} className='space-y-4'>
               {error && (
                 <Alert variant='destructive'>
-                  <AlertCircle className='h-4 w-4' />
+                  <AlertCircle className='h-6 w-6' />
                   <AlertDescription>{error}</AlertDescription>
                 </Alert>
               )}
 
               <div className='space-y-2'>
-                <Label htmlFor='currentPassword'>Current Password</Label>
+                <Label
+                  htmlFor='currentPassword'
+                  className='text-lg font-medium text-primary'
+                >
+                  Current Password
+                </Label>
                 <div className='relative'>
                   <Input
                     id='currentPassword'
@@ -96,6 +103,7 @@ export default function ChangePasswordPage() {
                     type={showCurrentPassword ? "text" : "password"}
                     value={formData.currentPassword}
                     onChange={handleChange}
+                    className='text-lg font-medium text-primary'
                   />
                   <button
                     type='button'
@@ -112,7 +120,12 @@ export default function ChangePasswordPage() {
               </div>
 
               <div className='space-y-2'>
-                <Label htmlFor='newPassword'>New Password</Label>
+                <Label
+                  htmlFor='newPassword'
+                  className='text-lg font-medium text-primary'
+                >
+                  New Password
+                </Label>
                 <div className='relative'>
                   <Input
                     id='newPassword'
@@ -120,6 +133,7 @@ export default function ChangePasswordPage() {
                     type={showNewPassword ? "text" : "password"}
                     value={formData.newPassword}
                     onChange={handleChange}
+                    className='text-lg font-medium text-primary'
                   />
                   <button
                     type='button'
@@ -132,7 +146,12 @@ export default function ChangePasswordPage() {
               </div>
 
               <div className='space-y-2'>
-                <Label htmlFor='confirmPassword'>Confirm New Password</Label>
+                <Label
+                  htmlFor='confirmPassword'
+                  className='text-lg font-medium text-primary'
+                >
+                  Confirm New Password
+                </Label>
                 <div className='relative'>
                   <Input
                     id='confirmPassword'
@@ -140,10 +159,11 @@ export default function ChangePasswordPage() {
                     type={showConfirmPassword ? "text" : "password"}
                     value={formData.confirmPassword}
                     onChange={handleChange}
+                    className='text-lg font-medium text-primary'
                   />
                   <button
                     type='button'
-                    className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-500'
+                    className='absolute right-3 top-1/2 -translate-y-1/2 text-lg font-medium text-primary'
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
                     {showConfirmPassword ? (
@@ -156,7 +176,10 @@ export default function ChangePasswordPage() {
               </div>
 
               <div className='pt-2'>
-                <Button type='submit' className='bg-teal-800 hover:bg-teal-700'>
+                <Button
+                  type='submit'
+                  className='bg-primary hover:bg-teal-700 text-lg font-medium text-white'
+                >
                   Update Password
                 </Button>
               </div>
