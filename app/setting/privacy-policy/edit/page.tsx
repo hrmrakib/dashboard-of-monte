@@ -32,24 +32,31 @@ const defaultContent = `
 
 const EditAboutUs = () => {
   useEffect(() => {
-    const editorContainer = document.getElementById("editor");
+    const loadQuill = async () => {
+      const Quill = (await import("quill")).default;
 
-    // Prevent double initialization
-    if (
-      editorContainer &&
-      !editorContainer.classList.contains("ql-container")
-    ) {
-      const quill = new Quill(editorContainer, {
-        theme: "snow",
-        placeholder: "Enter your update about us...",
-      });
+      const editorContainer = document.getElementById("editor");
 
-      quill.clipboard.dangerouslyPasteHTML(defaultContent);
+      if (
+        editorContainer &&
+        !editorContainer.classList.contains("ql-container")
+      ) {
+        const quill = new Quill(editorContainer, {
+          theme: "snow",
+          placeholder: "Enter your update about us...",
+        });
 
-      quill.on("text-change", () => {
-        const html = quill.root.innerHTML;
-        console.log("HTML content:", html);
-      });
+        quill.clipboard.dangerouslyPasteHTML(defaultContent);
+
+        quill.on("text-change", () => {
+          const html = quill.root.innerHTML;
+          console.log("HTML content:", html);
+        });
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      loadQuill();
     }
   }, []);
 
@@ -66,3 +73,40 @@ const EditAboutUs = () => {
 };
 
 export default EditAboutUs;
+
+// const EditAboutUs = () => {
+//   useEffect(() => {
+//     const editorContainer = document.getElementById("editor");
+
+//     // Prevent double initialization
+//     if (
+//       editorContainer &&
+//       !editorContainer.classList.contains("ql-container")
+//     ) {
+//       const quill = new Quill(editorContainer, {
+//         theme: "snow",
+//         placeholder: "Enter your update about us...",
+//       });
+
+//       quill.clipboard.dangerouslyPasteHTML(defaultContent);
+
+//       quill.on("text-change", () => {
+//         const html = quill.root.innerHTML;
+//         console.log("HTML content:", html);
+//       });
+//     }
+//   }, []);
+
+//   return (
+//     <div className='min-h-[75vh] w-[96%] mx-auto flex flex-col justify-between gap-6'>
+//       <div className='space-y-6'>
+//         <div className='h-full'>
+//           <div id='editor' className='h-[50vh] bg-white text-base' />
+//         </div>
+//       </div>
+//       <div className='flex justify-end'></div>
+//     </div>
+//   );
+// };
+
+// export default EditAboutUs;
